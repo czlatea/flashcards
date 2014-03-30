@@ -13,7 +13,7 @@
     var word = $scope.words[$scope.index];
     if (!word) {
       this.init();
-      if ($scope.words.length == 0) {
+      if ($scope.words.length === 0) {
         $scope.noWords = true;
         return null;
       } else {

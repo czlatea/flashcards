@@ -15,4 +15,4 @@
       { id: 9, name: '9 month', interval: 270 }
     ]
   }
-}
+};
