@@ -1,0 +1,24 @@
+{
+  "name": "gain7",
+  "version": "0.0.0",
+  "authors": [
+    "Cristian Florin Zlatea <cristian.florin@zlatea.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.14",
+    "angular-route": "~1.2.14",
+    "bootstrap": "~3.1.1",
+    "font-awesome": "~4.0.3",
+    "angular-ui-bootstrap": "~0.9.0",
+    "angular-toastr": "~0.2.4",
+    "blockui": "*"
+  }
+}

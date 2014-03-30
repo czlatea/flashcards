@@ -1,0 +1,4 @@
+﻿FlashCards = {
+  services: {},
+  controllers: {},
+}
