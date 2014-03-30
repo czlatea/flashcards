@@ -1,16 +1,27 @@
 ﻿FlashCards.controllers.FlashCardsController = ['$scope', 'FlashCardsService', function ($scope, flashCardsService) {
 
-  function init() {
+  $scope.init=function () {
     $scope.words = flashCardsService.getWords();
     $scope.index = 0;
     $scope.state = null;
     $scope.translation = null;
   };
 
-  init();
+  $scope.init();
 
   $scope.word = function () {
     var word = $scope.words[$scope.index];
+    if (!word) {
+      this.init();
+      if ($scope.words.length == 0) {
+        $scope.noWords = true;
+        return null;
+      } else {
+        return $scope.word();
+      }
+    }
+      
+    $scope.noWords = false;
     return word;
   };
 

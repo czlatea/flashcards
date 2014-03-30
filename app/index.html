@@ -28,8 +28,8 @@
   </nav>
 
   <div class="container" ng-controller="FlashCardsController">
-    <div class="panel panel-primary">
-      <div class="panel-heading panel-title">{{word().en}}</div>
+    <div class="panel panel-primary" ng-hide="noWords">
+      <div class="panel-heading panel-title">{{word().id}}.{{word().en}}</div>
 
       <div class="panel-body" ng-switch="state" ng-class="cssClass()">
         <div ng-switch-default>
@@ -40,7 +40,7 @@
           <p>You are correct</p>
           Expected Translation: {{word().de}}<br />
           Your Translation:{{translation}}<br />
-          Points:+{{word().level}}<br />
+          Points:+{{word().points}}<br />
           Total Points {{score()}}
         </div>
 
@@ -48,7 +48,7 @@
           <p>You are wrong !</p>
           Expected Translation: {{word().de}}<br />
           Your Translation:{{translation}}<br />
-          Points:-{{word().level}}<br />
+          Points:{{word().points}}<br />
           Total Points {{score()}}
         </div>
       </div>
@@ -57,6 +57,10 @@
         <button type="button" class="btn btn-lg btn-success pull-right" ng-click="actions.submit()" ng-hide="state!==null">Submit<i class="fa fa-lg fa-check"></i></button>
         <button type="button" class="btn btn-lg btn-danger" ng-click="actions.next()">Next<i class="fa fa-lg fa-arrow-right"></i> </button>
       </div>
+    </div>
+
+    <div ng-show="noWords">
+      <p class="x-message text-center">No words at this moment. Please try later !</p>
     </div>
   </div>
 
