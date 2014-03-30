@@ -19,6 +19,8 @@
     "font-awesome": "~4.0.3",
     "angular-ui-bootstrap": "~0.9.0",
     "angular-toastr": "~0.2.4",
-    "blockui": "*"
+    "blockui": "*",
+    "lodash": "~2.4.1",
+    "momentjs": "~2.5.1"
   }
 }

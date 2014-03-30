@@ -1,21 +1,79 @@
-﻿<!DOCTYPE html>
-<html>
+﻿<html>
 <head>
   <title>Flash Cards</title>
   <link href="../bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
   <link href="../bower_components/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <link href="css/app.css" rel="stylesheet" />
 </head>
 <body ng-app="flashCardsModule">
-  <ul ng-controller="FlashCardsController">
-    <li ng-repeat="word in words">{{word.de}} - {{word.en}}</li>
-  </ul>
-  <script src="../bower_components/jquery/dist/jquery.min.js"></script>
-  <script src="../bower_components/angular/angular.js"></script>
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" ng-controller="MenuController">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="#" class="navbar-brand">Flash Cards</a>
+    </div>
 
-  <script src="js/flash-cards.js"></script>
-  <script src="js/services/words.js"></script>
-  <script src="js/services/flash-cards-service.js"></script>
-  <script src="js/controllers/flash-cards-controller.js"></script>
-  <script src="js/app.js"></script>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="nav navbar-nav pull-right">
+        <li><a href="#" title="Points"><span class="badge">{{score()}}</span></a></li>
+        <li><a href="#"><i class="fa fa-lg fa-bar-chart-o"></i>Stats</a></li>
+        <li><a href="#"><i class="fa fa-lg fa-sun-o"></i>About</a></li>
+        <li><a href="#"><i class="fa fa-lg fa-bars"></i>Settings</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container" ng-controller="FlashCardsController">
+    <div class="panel panel-primary">
+      <div class="panel-heading panel-title">{{word().en}}</div>
+
+      <div class="panel-body" ng-switch="state" ng-class="cssClass()">
+        <div ng-switch-default>
+          <textarea class="col-sm-12 x-no-border" rows="3" placeholder="Type here the translation" ng-model="$parent.translation"></textarea>
+        </div>
+
+        <div ng-switch-when="success" ng-click="actions.next()">
+          <p>You are correct</p>
+          Expected Translation: {{word().de}}<br />
+          Your Translation:{{translation}}<br />
+          Points:+{{word().level}}<br />
+          Total Points {{score()}}
+        </div>
+
+        <div ng-switch-when="error" ng-click="actions.next()">
+          <p>You are wrong !</p>
+          Expected Translation: {{word().de}}<br />
+          Your Translation:{{translation}}<br />
+          Points:-{{word().level}}<br />
+          Total Points {{score()}}
+        </div>
+      </div>
+
+      <div class="panel-footer">
+        <button type="button" class="btn btn-lg btn-success pull-right" ng-click="actions.submit()" ng-hide="state!==null">Submit<i class="fa fa-lg fa-check"></i></button>
+        <button type="button" class="btn btn-lg btn-danger" ng-click="actions.next()">Next<i class="fa fa-lg fa-arrow-right"></i> </button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/lodash/dist/lodash.min.js"></script>
+    <script src="../bower_components/momentjs/min/moment.min.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+    <script src="js/flash-cards.js"></script>
+    <script src="js/services/words.js"></script>
+    <script src="js/services/flash-cards-service.js"></script>
+    <script src="js/controllers/menu-controller.js"></script>
+    <script src="js/controllers/flash-cards-controller.js"></script>
+    <script src="js/app.js"></script>
+  </footer>
+
 </body>
 </html>
