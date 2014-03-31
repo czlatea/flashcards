@@ -1,0 +1,31 @@
+{
+  "name": "CIRS",
+  "private": true,
+  "version": "0.0.0",
+  "dependencies": {
+    "chokidar": "~0.8.1",
+    "websocket": "~1.0.8",
+    "node-windows": "~0.1.5",
+    "rsvp": "~3.0.6",
+    "lodash": "~2.4.1"
+  },
+  "devDependencies": {
+    "browserify": "~3.30.2",
+    "MD5": "~1.2.0",
+    "jsdoc": "~3.3.0-alpha4",
+    "grunt-cli": "~0.1.13",
+    "grunt": "~0.4.1",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-browserify": "~1.3.1",
+    "grunt-contrib-less": "~0.9.0",
+    "grunt-contrib-stylus": "~0.13.0",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-ember-templates": "~0.4.17",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-exec": "~0.4.5",
+    "time-grunt": "~0.2.9",
+    "grunt-contrib-uglify": "~0.3.2",
+    "grunt-contrib-cssmin": "~0.8.0"
+  }
+}
