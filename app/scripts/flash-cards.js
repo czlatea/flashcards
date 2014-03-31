@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-FlashCards = {
+var FlashCards = {
   services: {},
   controllers: {},
   config: {

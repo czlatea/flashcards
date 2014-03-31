@@ -8,5 +8,5 @@ FlashCards.words =
   { id: 4, level: 1, de: 'Gutten Abend', en: 'Good evening' },
   { id: 5, level: 1, de: 'Gutte Nacht', en: 'Good night' },
   { id: 6, level: 1, de: 'Willkommen', en: 'Welcome' },
-  { id: 7, level: 1, de: 'Auf Widersehen', en: 'Goody bye' }
+  { id: 7, level: 1, de: 'Auf Widersehen', en: 'Good bye' }
 ];

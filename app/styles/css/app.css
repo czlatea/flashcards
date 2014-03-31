@@ -4,34 +4,43 @@
 }
 
 *:focus {
-    outline: 0;
+  outline: 0;
 }
 
 
 @font-face {
-    font-family: "chalkduster";
-    src: url(../fonts/Chalkduster.ttf) format("truetype");
+  font-family: "chalkduster";
+  src: url(../fonts/Chalkduster.ttf) format("truetype");
 }
 
 .x-no-border {
   border: none;
 }
 
-.x-panel-success,.x-panel-error {
+.x-panel-success, .x-panel-error {
   cursor: pointer;
   font-family: chalkduster, sans-serif;
   font-size: 16px;
 }
 
-.x-panel-success{ background-color: #DFF0D8;}
-.x-panel-error{ background-color: #F2DEDE;}
+.x-panel-success {
+  background-color: #DFF0D8;
+}
+
+.x-panel-error {
+  background-color: #F2DEDE;
+}
 
 
 textarea {
   font-family: chalkduster, sans-serif;
-  font-size: 30px
+  font-size: 30px;
 }
-i{ margin-left: 5px; margin-right: 5px;}
+
+i {
+  margin-left: 5px;
+  margin-right: 5px;
+}
 
 .text-vertical {
   margin-top: 15px;
@@ -43,3 +52,6 @@ i{ margin-left: 5px; margin-right: 5px;}
   font-size: 24px;
 }
 
+.img-responsive {
+  margin: 0 auto!important;
+}
