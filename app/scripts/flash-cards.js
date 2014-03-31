@@ -1,4 +1,6 @@
-﻿FlashCards = {
+﻿'use strict';
+
+FlashCards = {
   services: {},
   controllers: {},
   config: {

@@ -1,4 +1,6 @@
-﻿FlashCards.services.FlashCardsService = ['FlashCardsDA', function (flashCardsDA) {
+﻿'use strict';
+
+FlashCards.services.FlashCardsService = ['FlashCardsDA', function (flashCardsDA) {
   this.score = 0;
 
   this.getWords = function () {
@@ -14,7 +16,7 @@
   };
 
   this.process = function (word, translation) {
-    translation = translation || "";
+    translation = translation || '';
     var result = word.de.toLocaleLowerCase() === translation.toLowerCase();
 
     var increment = result ? 1 : -1;

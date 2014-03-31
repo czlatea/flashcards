@@ -1,4 +1,6 @@
-﻿FlashCards.controllers.FlashCardsController = ['$scope', 'FlashCardsService', function ($scope, flashCardsService) {
+﻿'use strict';
+
+FlashCards.controllers.FlashCardsController = ['$scope', 'FlashCardsService', function ($scope, flashCardsService) {
 
   $scope.init=function () {
     $scope.words = flashCardsService.getWords();
@@ -38,16 +40,16 @@
 
     submit: function () {
       var ok = flashCardsService.process($scope.word(), $scope.translation);
-      $scope.state = ok ? "success" : "error";
+      $scope.state = ok ? 'success' : 'error';
     }
   };
 
   $scope.cssClass = function() {
     switch ($scope.state) {
-    case "error":
-      return "x-panel-error";
-    case "success":
-      return "x-panel-success";
+    case 'error':
+      return 'x-panel-error';
+    case 'success':
+      return 'x-panel-success';
     default:
       return null;
     }

@@ -1,4 +1,6 @@
-﻿var flashCardsModule = angular.module('flashCardsModule', []);
+﻿'use strict';
+
+var flashCardsModule = angular.module('flashCardsModule', []);
 
 flashCardsModule.service(FlashCards.services);
 flashCardsModule.controller(FlashCards.controllers);

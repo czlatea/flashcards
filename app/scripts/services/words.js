@@ -1,4 +1,6 @@
-﻿FlashCards.words =
+﻿'use strict';
+
+FlashCards.words =
 [
   { id: 1, level: 1, de: 'Hallo', en: 'Hello' },
   { id: 2, level: 1, de: 'Gutten Morgen', en: 'Good morning' },

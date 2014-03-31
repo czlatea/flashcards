@@ -10,7 +10,7 @@
 
 @font-face {
     font-family: "chalkduster";
-    src: url(fonts/Chalkduster.ttf) format("truetype");
+    src: url(../fonts/Chalkduster.ttf) format("truetype");
 }
 
 .x-no-border {
