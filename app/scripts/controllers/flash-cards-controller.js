@@ -28,7 +28,7 @@ FlashCards.controllers.FlashCardsController = ['$scope', 'FlashCardsService', fu
   };
 
   $scope.score = function () {
-    return flashCardsService.score;
+    return flashCardsService.score();
   };
 
   $scope.actions = {
