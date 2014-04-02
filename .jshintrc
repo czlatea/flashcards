@@ -16,7 +16,7 @@
   "forin": false,
   "laxbreak": false,
   "sub": false,
-  "maxlen": 150,
+  "maxlen": 160,
   "indent": 2,
   "maxerr": 50,
   "passfail": false,

@@ -1,9 +1,11 @@
 {
   "name": "gain7",
   "version": "0.0.0",
-  "authors": ["Cristian Florin Zlatea <cristian.florin@zlatea.com>"],
+  "authors": [
+    "Cristian Florin Zlatea <cristian.florin@zlatea.com>"
+  ],
   "license": "MIT",
-  "directory":"bower_components",
+  "directory": "bower_components",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -21,6 +23,7 @@
     "blockui": "*",
     "lodash": "~2.4.1",
     "momentjs": "~2.5.1",
-    "angular-ui-router": "~0.2.10"
+    "angular-ui-router": "~0.2.10",
+    "hello": "~0.1.4"
   }
 }

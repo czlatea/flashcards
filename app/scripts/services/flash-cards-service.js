@@ -1,7 +1,14 @@
 ﻿'use strict';
 
 FlashCards.services.FlashCardsService = ['FlashCardsDA', function (flashCardsDA) {
-  this.score = 0;
+  this.score = function () {
+    var score = 0;
+    _.each(flashCardsDA.getProcessedWords(), function (word) {
+      score += word.level * word.box;
+
+    });
+    return score;
+  };
 
   this.getWords = function () {
     var date = moment();
@@ -21,15 +28,13 @@ FlashCards.services.FlashCardsService = ['FlashCardsDA', function (flashCardsDA)
 
     var increment = result ? 1 : -1;
 
-    word.points = word.box * word.level*increment;
+    word.points = word.box * word.level * increment;
     word.box = word.box + increment;
 
     if (word.box === 0) {
       word.box = 1;
       word.points = 0;
     }
-
-    this.score += word.points;
 
     flashCardsDA.updateProcessedWord(word);
     return result;
@@ -65,8 +70,9 @@ FlashCards.services.FlashCardsDA = function () {
 
     processedWord.id = word.id;
     processedWord.count++;
+    processedWord.level = word.level;
     processedWord.box = word.box;
-    processedWord.scheduledFor = moment().add('days', FlashCards.config.boxes[processedWord.box-1].interval);
+    processedWord.scheduledFor = moment().add('days', FlashCards.config.boxes[processedWord.box - 1].interval);
 
 
     this.updateProcessedWords(processedWords);
