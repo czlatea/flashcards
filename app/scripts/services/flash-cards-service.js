@@ -3,9 +3,9 @@
 FlashCards.services.FlashCardsService = ['FlashCardsDA', function (flashCardsDA) {
   this.score = function () {
     var score = 0;
-    _.each(flashCardsDA.getProcessedWords(), function (word) {
-      score += word.level * word.box;
-
+    _.each(flashCardsDA.getProcessedWords(), function (processedWord) {
+      var word= _.findWhere(FlashCards.words, { id: processedWord.id });
+      score += processedWord.level * word.box;
     });
     return score;
   };
@@ -70,7 +70,6 @@ FlashCards.services.FlashCardsDA = function () {
 
     processedWord.id = word.id;
     processedWord.count++;
-    processedWord.level = word.level;
     processedWord.box = word.box;
     processedWord.scheduledFor = moment().add('days', FlashCards.config.boxes[processedWord.box - 1].interval);
 

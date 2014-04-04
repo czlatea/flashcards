@@ -104,7 +104,7 @@
   <script type="text/ng-template" id="flashCards">
     <div ng-controller="FlashCardsController">
       <div class="panel panel-primary" ng-hide="noWords">
-        <div class="panel-heading panel-title">{{word().id}}.{{word().en}}</div>
+        <div class="panel-heading panel-title">{{word().box}}.{{word().en}}</div>
 
         <div class="panel-body" ng-switch="state" ng-class="cssClass()">
           <div ng-switch-default>
