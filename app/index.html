@@ -63,6 +63,7 @@
     <script src="scripts/services/flash-cards-service.js"></script>
     <script src="scripts/controllers/menu-controller.js"></script>
     <script src="scripts/controllers/flash-cards-controller.js"></script>
+    <script src="scripts/controllers/stats-controller.js"></script>
     <script src="scripts/app.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
@@ -94,9 +95,16 @@
   </script>
 
   <script type="text/ng-template" id="stats">
-    Stats template
+    <div ng-controller="StatsController">
+      <ul class="list-group">
+        <li ng-repeat="item in getStats()" class="list-group-item">
+          {{item.name}}
+          <span class="badge">{{item.count}}</span>
+        </li>
+      </ul>
+    </div>
   </script>
-  
+
   <script type="text/ng-template" id="login">
     login
   </script>

@@ -10,7 +10,7 @@ flashCardsModule.config(['$stateProvider', '$urlRouterProvider', '$locationProvi
 
   $urlRouterProvider.otherwise('/');
 
-  $stateProvider.state('flashCards', { url: '/', templateUrl: 'flashCards' });
+  $stateProvider.state('flashCards', { url: '/', templateUrl: 'flashCards',  });
   $stateProvider.state('settings', { url: '/settings', templateUrl: 'settings' });
   $stateProvider.state('about', { url: '/about', templateUrl: 'about' });
   $stateProvider.state('stats', { url: '/stats', templateUrl: 'stats' });

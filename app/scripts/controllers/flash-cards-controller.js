@@ -31,6 +31,10 @@ FlashCards.controllers.FlashCardsController = ['$scope', 'FlashCardsService', fu
     return flashCardsService.score();
   };
 
+  $scope.getStats = function() {
+    return flashCardsService.getStats();
+  };
+
   $scope.actions = {
     next: function () {
       $scope.index++;

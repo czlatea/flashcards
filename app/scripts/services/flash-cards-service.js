@@ -5,7 +5,7 @@ FlashCards.services.FlashCardsService = ['FlashCardsDA', function (flashCardsDA)
     var score = 0;
     _.each(flashCardsDA.getProcessedWords(), function (processedWord) {
       var word= _.findWhere(FlashCards.words, { id: processedWord.id });
-      score += processedWord.level * word.box;
+      score += processedWord.box * word.level;
     });
     return score;
   };
@@ -39,6 +39,18 @@ FlashCards.services.FlashCardsService = ['FlashCardsDA', function (flashCardsDA)
     flashCardsDA.updateProcessedWord(word);
     return result;
   };
+
+  this.getStats = function () {
+    var processedWords = flashCardsDA.getProcessedWords();
+    var stats = [];
+    _.each(FlashCards.config.boxes, function(box) {
+      stats.push({
+        name: box.name,
+        count: _.where(processedWords,{ box: box.id }).length
+      });
+    });
+    return stats;
+  }
 }];
 
 FlashCards.services.FlashCardsDA = function () {
