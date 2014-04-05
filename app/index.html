@@ -30,8 +30,8 @@
         <li><a href="#" title="Points"><span class="badge">{{score()}}</span> Points</a></li>
         <li><a ui-sref="stats"><i class="fa fa-lg fa-bar-chart-o"></i>Stats</a></li>
         <li><a ui-sref="about"><i class="fa fa-lg fa-sun-o"></i>About</a></li>
-        <li><a ui-sref="settings"><i class="fa fa-lg fa-bars"></i>Settings</a></li>
-        <li><a ui-sref="login"><i class="fa fa-lg fa-bars"></i>Login</a></li>
+        <!--<li><a ui-sref="settings"><i class="fa fa-lg fa-bars"></i>Settings</a></li>-->
+        <li><a ui-sref="login"><i class="fa fa-lg fa-sign-in"></i>Login</a></li>
       </ul>
     </div>
   </nav>
@@ -96,12 +96,19 @@
 
   <script type="text/ng-template" id="stats">
     <div ng-controller="StatsController">
-      <ul class="list-group">
-        <li ng-repeat="item in getStats()" class="list-group-item">
-          {{item.name}}
-          <span class="badge">{{item.count}}</span>
-        </li>
-      </ul>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          Number of practiced words per box
+        </div>
+        <div class="panel-body">
+          <ul class="list-group">
+            <li ng-repeat="item in getStats()" class="list-group-item">
+              {{item.name}}
+              <span class="badge">{{item.count}}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </script>
 
@@ -112,11 +119,13 @@
   <script type="text/ng-template" id="flashCards">
     <div ng-controller="FlashCardsController">
       <div class="panel panel-primary" ng-hide="noWords">
-        <div class="panel-heading panel-title">{{word().box}}.{{word().en}}</div>
+        <div class="panel-heading panel-title">
+          {{word().box}}.{{word().en}}
+        </div>
 
         <div class="panel-body" ng-switch="state" ng-class="cssClass()">
           <div ng-switch-default>
-            <textarea class="col-sm-12 x-no-border" rows="3" placeholder="Type here the translation" ng-model="$parent.translation"></textarea>
+            <textarea class="col-sm-12 x-no-border" rows="2" placeholder="Type here the translation" ng-model="$parent.translation" auto-focus></textarea>
           </div>
 
           <div ng-switch-when="success" ng-click="actions.next()">
@@ -136,10 +145,12 @@
           </div>
         </div>
 
-        <div class="panel-footer">
-          <button type="button" class="btn btn-lg btn-success pull-right" ng-click="actions.submit()" ng-hide="state!==null">Submit<i class="fa fa-lg fa-check"></i></button>
-          <button type="button" class="btn btn-lg btn-danger" ng-click="actions.next()">Next<i class="fa fa-lg fa-arrow-right"></i> </button>
+        <div class="panel-footer" ng-hide="state!==null">
+          <button type="button" class="btn btn-lg btn-success" ng-click="actions.submit()">Submit<i class="fa fa-lg fa-check"></i></button>
+          <!--<button type="button" class="btn btn-lg btn-danger pull-right" ng-click="actions.next()">Next<i class="fa fa-lg fa-arrow-right"></i> </button>-->
         </div>
+        
+        <shortcut></shortcut>
       </div>
 
       <div ng-show="noWords">

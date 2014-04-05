@@ -5,7 +5,7 @@ FlashCards.services.FlashCardsService = ['FlashCardsDA', function (flashCardsDA)
     var score = 0;
     _.each(flashCardsDA.getProcessedWords(), function (processedWord) {
       var word= _.findWhere(FlashCards.words, { id: processedWord.id });
-      score += processedWord.box * word.level;
+      score += (processedWord.box-1) * word.level;
     });
     return score;
   };

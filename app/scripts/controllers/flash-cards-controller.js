@@ -48,6 +48,17 @@ FlashCards.controllers.FlashCardsController = ['$scope', 'FlashCardsService', fu
     }
   };
 
+  $scope.onKeyPressed = function(e) {
+    if (e.keyCode === 13) {
+      if ($scope.state === null) {
+        $scope.actions.submit();
+      } else {
+        $scope.actions.next();
+
+      }
+    }
+  };
+
   $scope.cssClass = function() {
     switch ($scope.state) {
     case 'error':
