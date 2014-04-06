@@ -1,12 +1,26 @@
 ﻿body {
   padding-top: 70px;
   padding-bottom: 70px;
+  background-color: #F5F5F5;
+}
+
+textarea {
+  font-family: chalkduster, sans-serif;
+  font-size: 30px;
+}
+
+i {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+a{
+    cursor: pointer;
 }
 
 *:focus {
   outline: 0;
 }
-
 
 @font-face {
   font-family: "chalkduster";
@@ -31,16 +45,6 @@
   background-color: #F2DEDE;
 }
 
-
-textarea {
-  font-family: chalkduster, sans-serif;
-  font-size: 30px;
-}
-
-i {
-  margin-left: 5px;
-  margin-right: 5px;
-}
 
 .text-vertical {
   margin-top: 15px;

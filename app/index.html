@@ -30,8 +30,9 @@
         <li><a href="#" title="Points"><span class="badge">{{score()}}</span> Points</a></li>
         <li><a ui-sref="stats"><i class="fa fa-lg fa-bar-chart-o"></i>Stats</a></li>
         <li><a ui-sref="about"><i class="fa fa-lg fa-sun-o"></i>About</a></li>
-        <!--<li><a ui-sref="settings"><i class="fa fa-lg fa-bars"></i>Settings</a></li>-->
-        <li><a ui-sref="login"><i class="fa fa-lg fa-sign-in"></i>Login</a></li>
+        <!--<li><a ui-sref="settings"><i class="fa fa-lg fa-cog"></i>Settings</a></li>-->
+        <li><a ng-click="actions.sync()"><i class="fa fa-lg fa-cogs"></i>Synchronize</a></li>
+        <!--<li><a ui-sref="login"><i class="fa fa-lg fa-sign-in"></i>Login</a></li>-->
       </ul>
     </div>
   </nav>
@@ -98,7 +99,7 @@
     <div ng-controller="StatsController">
       <div class="panel panel-primary">
         <div class="panel-heading">
-          Number of practiced words per box
+          Number of practiced words per deck
         </div>
         <div class="panel-body">
           <ul class="list-group">
@@ -113,7 +114,25 @@
   </script>
 
   <script type="text/ng-template" id="login">
-    login
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h3>Login</h3>
+        <div class="row">
+          <div class="col-sm-5">
+            <hr />
+          </div>
+          <div class="col-sm-2 text-center text-vertical">
+            or
+          </div>
+          <div class="col-sm-5">
+            <hr />
+          </div>
+        </div>
+        <button class="btn btn-lg btn-primary"><i class="fa fa-lg fa-facebook"></i>Facebook</button>
+      </div>
+    </div>
+
+
   </script>
 
   <script type="text/ng-template" id="flashCards">
@@ -149,7 +168,7 @@
           <button type="button" class="btn btn-lg btn-success" ng-click="actions.submit()">Submit<i class="fa fa-lg fa-check"></i></button>
           <!--<button type="button" class="btn btn-lg btn-danger pull-right" ng-click="actions.next()">Next<i class="fa fa-lg fa-arrow-right"></i> </button>-->
         </div>
-        
+
         <shortcut></shortcut>
       </div>
 
