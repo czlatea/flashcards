@@ -24,6 +24,7 @@
     "lodash": "~2.4.1",
     "momentjs": "~2.5.1",
     "angular-ui-router": "~0.2.10",
-    "hello": "~0.1.4"
+    "hello": "~0.1.4",
+    "qunit": "~1.14.0"
   }
 }

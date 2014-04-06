@@ -5,7 +5,7 @@ var flashCardsModule = angular.module('flashCardsModule', ['ui.router']);
 flashCardsModule.service(FlashCards.services);
 flashCardsModule.controller(FlashCards.controllers);
 
-flashCardsModule.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function ($stateProvider, $urlRouterProvider, $locationProvider) {
+flashCardsModule.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function ($stateProvider, $urlRouterProvider) {
   //$locationProvider.html5Mode(true);
 
   $urlRouterProvider.otherwise('/');
@@ -22,21 +22,21 @@ flashCardsModule.directive('shortcut', function () {
     restrict: 'E',
     replace: true,
     scope: true,
-    link: function postLink(scope, iElement, iAttrs) {
-      $(document).on('keypress', function (e) {
+    link: function postLink(scope) {
+      $().on('keypress', function (e) {
         scope.$apply(scope.onKeyPressed(e));
       });
     }
   };
 });
 
-flashCardsModule.directive('autoFocus', function ($timeout) {
+flashCardsModule.directive('autoFocus', ['$timeout',function ($timeout) {
   return {
     restrict: 'AC',
-    link: function (_scope, _element) {
+    link: function (scope, element) {
       $timeout(function () {
-        _element[0].focus();
+        element[0].focus();
       }, 0);
     }
   };
-});
+}]);
